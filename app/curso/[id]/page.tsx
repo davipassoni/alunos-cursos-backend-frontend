@@ -64,7 +64,7 @@ export default function CursoPage() {
         <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-black via-gray-900 to-gray-800 px-4">
             <div className="bg-white text-black p-8 md:p-10 rounded-3xl shadow-2xl w-full max-w-md transition-all duration-300 hover:scale-[1.015]">
 
-                {/* Header */}
+               
                 <div className="flex items-center justify-between mb-6">
                     <h1 className="text-xl font-semibold text-gray-700">
                         Curso
@@ -88,7 +88,7 @@ export default function CursoPage() {
                     </div>
                 </div>
 
-                {/* Avatar */}
+               
                 <div className="flex flex-col items-center mb-8">
                     <div className="w-24 h-24 flex items-center justify-center rounded-full bg-linear-to-br from-black to-gray-700 text-white text-3xl font-bold shadow-lg">
                         {curso.nome?.[0]?.toUpperCase() || "?"}
@@ -103,7 +103,7 @@ export default function CursoPage() {
                     </p>
                 </div>
 
-                {/* Infos */}
+               
                 <div className="space-y-3 text-sm">
 
                     <Info
@@ -123,7 +123,7 @@ export default function CursoPage() {
                     />
                 </div>
 
-                {/* Alunos */}
+              
                 {curso.alunos && curso.alunos.length > 0 && (
                     <div className="mt-6">
                         <h3 className="text-sm font-semibold text-gray-600 mb-2">

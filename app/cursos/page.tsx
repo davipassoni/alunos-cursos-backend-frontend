@@ -9,7 +9,7 @@ export default async function CursosPage() {
       
       <div className="w-full max-w-2xl">
         
-        {/* Header */}
+       
         <div className="mb-10 text-center">
           <h1 className="text-5xl font-extrabold text-white tracking-tight">
             Cursos
@@ -22,7 +22,7 @@ export default async function CursosPage() {
           </p>
         </div>
 
-        {/* Card */}
+      
         <div className="bg-white/95 backdrop-blur rounded-3xl shadow-2xl p-8 transition-all duration-300 hover:scale-[1.01]">
           
           {cursos.length === 0 ? (
@@ -36,7 +36,7 @@ export default async function CursosPage() {
                   key={curso.id}
                   className="flex items-center justify-between bg-gray-50 px-4 py-3 rounded-xl hover:bg-gray-100 transition"
                 >
-                  {/* Infos */}
+                
                   <div>
                     <p className="font-semibold text-gray-800">
                       {curso.nome}
@@ -46,7 +46,7 @@ export default async function CursosPage() {
                     </p>
                   </div>
 
-                  {/* Ações */}
+                 
                   <div className="flex items-center gap-3 text-sm">
                     <Link
                       href={`/curso/${curso.id}`}
@@ -75,7 +75,7 @@ export default async function CursosPage() {
             </ul>
           )}
 
-          {/* Footer */}
+         
           <div className="mt-6 flex items-center justify-between">
             <span className="text-gray-500 text-sm">
               Total: {cursos.length}

@@ -1,35 +1,32 @@
 "use client";
-
-import { Curso } from "@/interfaces/cursos";
+import { Aluno } from "@/interfaces/alunos";
 import { useParams } from "next/navigation";
 import { useEffect, useState, SubmitEvent } from "react";
-import { getCurso, updateCurso } from "../actions";
+import { getAluno, updateAluno } from "../actions";
 import { useRouter } from "next/navigation";
 
-export default function CursoPage() {
+export default function AlunoPage() {
     const { id } = useParams();
-    const [curso, setCurso] = useState({} as Curso);
+    const [aluno, setAluno] = useState({} as Aluno);
     const router = useRouter();
 
     useEffect(() => {
-        getCurso(Number(id)).then((response) => setCurso(response));
+        getAluno(Number(id)).then((response) => setAluno(response));
     }, [id]);
 
-    function handleChange(value: string | number, key: keyof Curso) {
-        setCurso((oldState) => ({ ...oldState, [key]: value }));
+    function handleChange(value: string | number, key: keyof Aluno) {
+        setAluno(oldState => ({ ...oldState, [key]: value }));
     }
 
     async function handleUpdate(e: SubmitEvent) {
         e.preventDefault();
-
-        const response = await updateCurso(Number(id), curso);
+        const response = await updateAluno(Number(id), aluno);
 
         if (response) {
             alert(response);
             return;
         }
-
-        router.push("/cursos");
+        router.push("/alunos");
     }
 
     return (
@@ -39,52 +36,53 @@ export default function CursoPage() {
                 className="bg-white w-full max-w-md rounded-2xl shadow-xl p-8 space-y-6"
             >
                 <h1 className="text-2xl font-bold text-center text-black">
-                    Editar Curso
+                    Editar Aluno
                 </h1>
 
                 <div className="space-y-2">
                     <label className="text-sm font-semibold text-gray-700">
-                        Nome do Curso
+                        Nome
                     </label>
-
                     <input
                         className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-black"
-                        value={curso.nome || ""}
-                        onChange={(e) =>
-                            handleChange(e.target.value, "nome")
-                        }
+                        value={aluno.nome || ""}
+                        onChange={(e) => handleChange(e.target.value, "nome")}
                     />
                 </div>
 
                 <div className="space-y-2">
                     <label className="text-sm font-semibold text-gray-700">
-                        Carga Horária
+                        CPF
                     </label>
-
                     <input
                         type="number"
                         className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-black"
-                        value={curso.cargaHoraria || ""}
-                        onChange={(e) =>
-                            handleChange(
-                                Number(e.target.value),
-                                "cargaHoraria"
-                            )
-                        }
+                        value={aluno.cpf || ""}
+                        onChange={(e) => handleChange(Number(e.target.value), "cpf")}
                     />
                 </div>
 
                 <div className="space-y-2">
                     <label className="text-sm font-semibold text-gray-700">
-                        Descrição
+                        Idade
                     </label>
-
-                    <textarea
+                    <input
+                        type="number"
                         className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-black"
-                        value={curso.descricao || ""}
-                        onChange={(e) =>
-                            handleChange(e.target.value, "descricao")
-                        }
+                        value={aluno.idade || ""}
+                        onChange={(e) => handleChange(Number(e.target.value), "idade")}
+                    />
+                </div>
+
+                <div className="space-y-2">
+                    <label className="text-sm font-semibold text-gray-700">
+                        Email
+                    </label>
+                    <input
+                        type="email"
+                        className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-black"
+                        value={aluno.email || ""}
+                        onChange={(e) => handleChange(e.target.value, "email")}
                     />
                 </div>
 

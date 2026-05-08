@@ -17,7 +17,6 @@ export async function getAlunos() {
       next: { tags: ["listar"] },
     });
 
-    // 👇 Aqui entra o pulo do gato
     if (response.status === 401) {
       redirect("/login");
     }

@@ -12,7 +12,7 @@ export default async function AlunosPage() {
             
             <div className="w-full max-w-2xl">
                 
-                {/* Header */}
+               
                 <div className="mb-10 text-center">
                     <h1 className="text-5xl font-extrabold text-white tracking-tight">
                         Alunos
@@ -23,7 +23,7 @@ export default async function AlunosPage() {
                     </p>
                 </div>
 
-                {/* Card principal */}
+                
                 <div className="bg-white/95 backdrop-blur rounded-3xl shadow-2xl p-8 transition-all duration-300 hover:scale-[1.01]">
                     
                     <ul className="space-y-4">
@@ -36,7 +36,6 @@ export default async function AlunosPage() {
                         ))}
                     </ul>
 
-                    {/* Footer interno */}
                     <div className="mt-6 flex items-center justify-between">
                         <span className="text-gray-500 text-sm">
                             Total: {alunos.length}

@@ -16,7 +16,7 @@ export default function AlunoItem({ id, nome }: Props) {
   const [loading, setLoading] = useState(false);
 
   async function handleDelete(e: React.MouseEvent) {
-    e.preventDefault(); // evita ativar o Link
+    e.preventDefault(); 
     e.stopPropagation();
 
     try {

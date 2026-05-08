@@ -50,7 +50,7 @@ export default function AlunoPage() {
                     </p>
                 ) : aluno ? (
                     <>
-                        {/* Header */}
+                     
                         <div className="flex items-center justify-between mb-6">
                             <h1 className="text-xl font-semibold text-gray-700">
                                 Perfil
@@ -67,7 +67,6 @@ export default function AlunoPage() {
                             )}
                         </div>
 
-                        {/* Avatar */}
                         <div className="flex flex-col items-center mb-8">
                             <div className="w-24 h-24 flex items-center justify-center rounded-full bg-linear-to-br from-black to-gray-700 text-white text-3xl font-bold shadow-lg">
                                 {aluno.nome?.[0]?.toUpperCase() || "?"}
@@ -82,7 +81,7 @@ export default function AlunoPage() {
                             </p>
                         </div>
 
-                        {/* Infos */}
+                      
                         <div className="space-y-3 text-sm">
                             
                             <Info label="Idade" value={aluno.idade} />
